@@ -42,6 +42,8 @@ form button:hover {
     background: white;
 }
 
-
+.todo {
+    display: flex;
+}
 
 
