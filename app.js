@@ -22,4 +22,16 @@ function addTodo(evt) {
     todoDiv.appendChild(newTodo);
     //Add Todo div to todoList
     todoList.appendChild(todoDiv);
+    //Creat Add Button
+    addButton = document.createElement('button');
+    addButton.innerHTML = 'Done';
+    addButton.classList.add('done-button');
+    todoDiv.appendChild(addButton);
+    //Create Remove Button
+    removeButton = document.createElement('button');
+    removeButton.innerHTML = 'Remove';
+    removeButton.classList.add('remove-button');
+    todoDiv.appendChild(removeButton);
+   
+
 }
