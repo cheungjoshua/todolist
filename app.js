@@ -30,6 +30,7 @@ function addTodo(evt) {
     removeButton = document.createElement('button');
     removeButton.innerHTML = 'Remove';
     removeButton.classList.add('remove-btn');
+    
     // Add function for Remove Button
     removeButton.addEventListener('click', remove);
 
