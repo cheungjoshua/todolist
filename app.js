@@ -6,7 +6,6 @@ const todoList = document.querySelector('.todo-list');
 
 //Event Listeners
 todoButton.addEventListener("click", addTodo);
-removeButton.addEventListener('click', remove);
 
 //Functions
 
@@ -31,6 +30,9 @@ function addTodo(evt) {
     removeButton = document.createElement('button');
     removeButton.innerHTML = 'Remove';
     removeButton.classList.add('remove-btn');
+    // Add function for Remove Button
+    removeButton.addEventListener('click', remove);
+
     todoDiv.appendChild(removeButton);
     todoInput.value = '';
     //Add Todo div to todoList
@@ -39,5 +41,8 @@ function addTodo(evt) {
 
 function remove(e) {
     e.preventDefault();
-
+    const item = e.target;
+    console.log(item);
+    const parent = item.parentElement;
+    parent.remove();
 }
