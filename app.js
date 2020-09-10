@@ -6,6 +6,7 @@ const todoList = document.querySelector('.todo-list');
 
 //Event Listeners
 todoButton.addEventListener("click", addTodo);
+removeButton.addEventListener('click', remove);
 
 //Functions
 
@@ -18,20 +19,25 @@ function addTodo(evt) {
     //creat Li
     const newTodo = document.createElement('li');
     newTodo.innerText = todoInput.value;
+    newTodo.classList.add('todo-item');
     //Add Li to Todo
-    todoDiv.appendChild(newTodo);
-    //Add Todo div to todoList
-    todoList.appendChild(todoDiv);
+    todoDiv.appendChild(newTodo);   
     //Creat Add Button
     addButton = document.createElement('button');
     addButton.innerHTML = 'Done';
-    addButton.classList.add('done-button');
+    addButton.classList.add('done-btn');
     todoDiv.appendChild(addButton);
     //Create Remove Button
     removeButton = document.createElement('button');
     removeButton.innerHTML = 'Remove';
-    removeButton.classList.add('remove-button');
+    removeButton.classList.add('remove-btn');
     todoDiv.appendChild(removeButton);
-   
+    todoInput.value = '';
+    //Add Todo div to todoList
+    todoList.appendChild(todoDiv);
+}
+
+function remove(e) {
+    e.preventDefault();
 
 }
